@@ -32,7 +32,7 @@ This project was created to make an example of how to use Typescript's Project R
 
 - This is not an example of best practice for using typescript with express. I simply used any liberally since this was not the point of the example.
 
-- The shared code must reside inside the react app's src folder. This is because cra uses a setting that requires all code to reside within the src folder. So you cannot have the shared folder at same level of client and server nor can it be in the server folder if you are going to use create react settings.
+- The shared code folder must reside inside the react app's src folder. This is because cra uses a setting that requires all code to reside within the src folder. So you cannot have the shared folder at same level of client and server nor can it be in the server folder if you are going to use create react settings.
 
 - The shared code needs to be in its own subfolder with its own tsconfig.json This is because the cra scripts force the following settings in the tsconfig:
   "module": "esnext",
