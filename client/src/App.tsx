@@ -1,8 +1,10 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import { counter } from "./shared/shared";
 
 function App() {
+  setInterval(() => console.log(counter.count++), 1000);
   return (
     <div className="App">
       <header className="App-header">

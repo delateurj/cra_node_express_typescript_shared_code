@@ -9,7 +9,7 @@ var usersRouter = require("./routes/users");
 
 var app = express();
 
-import { counter } from "../client/shared/shared";
+import { counter } from "../client/src/shared/shared";
 
 setInterval(() => {
   console.log(counter.count++);
