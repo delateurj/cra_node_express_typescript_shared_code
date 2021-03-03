@@ -43,4 +43,4 @@ This project was created to make an example of how to use Typescript's Project R
 
 - Root dir cannot be set in the tsconfig of the server or you'll get errors trying to import code (shared.ts) from outside rootDir. Just set in top tsconfig.
 
-- In order to use tsc -b to build a lib (if desired) it is necessary to have the line "files":[] in the top tsconfig, otherwise it will attempt to build node modules
+- In order to use tsc -b to build a lib (if desired) it is necessary to have the line "files":[] in the top tsconfig, otherwise it will attempt to build node modules. (Sub Note: Should be able to do same with exclude, but I could not, probably due to having some @types in package.json of client, but resolving this not point of example)
