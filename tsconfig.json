@@ -1,0 +1,12 @@
+{
+  "compilerOptions":{
+    "rootDir": "./",
+  },
+  "references": [
+    {
+      "path": "./client/src/shared"
+    },
+    {
+      "path": "./server"
+    }]
+}

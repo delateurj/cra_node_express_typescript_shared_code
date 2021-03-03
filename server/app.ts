@@ -9,6 +9,12 @@ var usersRouter = require("./routes/users");
 
 var app = express();
 
+import { counter } from "../client/shared/shared";
+
+setInterval(() => {
+  console.log(counter.count++);
+}, 1000);
+
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "jade");
@@ -21,7 +27,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
-app.use("/count", (req, res) => res.send("Count"));
+app.use("/count", (req, res) => res.send("Count:" + counter.count));
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
