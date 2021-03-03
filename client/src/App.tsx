@@ -4,7 +4,7 @@ import "./App.css";
 import { counter } from "./shared/shared";
 
 function App() {
-  setInterval(() => console.log(counter.count++), 1000);
+  console.log("Initial value for counter:", counter.count);
   return (
     <div className="App">
       <header className="App-header">
