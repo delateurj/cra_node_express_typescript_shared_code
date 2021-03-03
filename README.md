@@ -18,15 +18,11 @@ This project was created to make an example of how to use Typescript's Project R
 
 ## Usage
 
-- Server
-  npm run start
-  You can then see web page at localhost:3003
-  Console will output updated counter every second.
-  If you refresh page, you'll get the latest counter count.
-- Client development is normal CRA process...NPM start in client directory.
-  In console you'll see the initial value of the counter.
+- Server:
+  npm run start. You can then see the web page at localhost:3003. The console will output updated counter every second. If you go to localhost:3003/count, you'll get the latest counter count.
+- Client: Normal CRA process...NPM start in client directory. In console you'll see the initial value of the counter.
 
-  Updates: If you change the initial value of count in shared.ts, the server will restart and use the new initial value and the client will restart and use the new initial value.
+- Updates: If you change the initial value of count in shared.ts, the server will restart and use the new initial value and the client will restart and use the new initial value.
 
   Note: The server counter and client counter instances are separate, this is just an example of client and server sharing code, not counter instances.
 
