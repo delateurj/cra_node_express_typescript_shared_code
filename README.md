@@ -19,8 +19,8 @@ This project was created to make an example of how to use Typescript's Project R
 ## Usage
 
 - Server:
-  npm run start. You can then see the web page at localhost:3003. The console will output updated counter every second. If you go to localhost:3003/count, you'll get the latest counter count.
-- Client: Normal CRA process...NPM start in client directory. In console you'll see the initial value of the counter.
+  npm run start. You can then see the web page at localhost:3003. The server console will output updated counter every second. If you go to localhost:3003/count, you'll get the latest counter count.
+- Client: Normal CRA process...NPM start in client directory. In the browser console you'll see the initial value of the counter.
 
 - Updates: If you change the initial value of count in shared.ts, the server will restart and use the new initial value and the client will restart and use the new initial value.
 
@@ -30,12 +30,14 @@ This project was created to make an example of how to use Typescript's Project R
 
 - It is necessary to have a top level tsconfig for project references to work. This was not immediately clear to me and I was trying to do it through just settings in the server tsconfig and/or client tsconfig
 
-- The shared code must reside inside the react app's src folder. This is because cra uses a setting that requires all code to reside within the src folder.
+- This is not an example of best practice for using typescript with express. I simply used any liberally since this was not the point of the example.
+
+- The shared code must reside inside the react app's src folder. This is because cra uses a setting that requires all code to reside within the src folder. So you cannot have the shared folder at same level of client and server nor can it be in the server folder if you are going to use create react settings.
 
 - The shared code needs to be in its own subfolder with its own tsconfig.json This is because the cra scripts force the following settings in the tsconfig:
   "module": "esnext",
   "noEmit": true
-  These settings cannot be used if using project references. You can change these settings but the next time you run npm(or yarn) start for the client the cra scripts modify tsconfig file of the client to set them back (if you miss the message on start that says its doing this, its gets confusing/frustrating fast). However, the cra sripts only modify the client's top level tsconfig. The config within the shared folder is left alone and can be set to support project reference.
+  These settings cannot be used if using project references. You can change these settings but the next time you run npm(or yarn) start for the client the cra scripts modify tsconfig file of the client to set them back (if you miss the message on start that says its doing this, its gets confusing/frustrating fast). However, the cra sripts only modify the client's top level tsconfig. The config within the shared folder is left alone and can be set to support project reference. CRA has reason for these settings for react app, so I think its best to only put non react code in the shared folder and since its going to be shared with server, no need for react code there.
 
 - To get nodemon to restart on changes to share.ts, a nodemon config entry is added to the package.json of the server to add watching the shared folder.
 
