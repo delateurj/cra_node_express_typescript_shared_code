@@ -9,10 +9,10 @@ var usersRouter = require("./routes/users");
 
 var app = express();
 
-import { counter } from "../client/src/shared/shared";
-
+import { counter, incrementCounter } from "../client/src/shared/shared";
+import { increment } from "./increment";
 setInterval(() => {
-  console.log(counter.count++);
+  incrementCounter(counter);
 }, 1000);
 
 // view engine setup

@@ -2,8 +2,10 @@
   "name": "server",
   "version": "0.0.0",
   "private": true,
+  "main":"./bin/www.ts",
   "scripts": {
     "start": "PORT=3003 nodemon ./bin/www.ts"
+    ,"debug": "PORT=3003 nodemon ./bin/www.ts"
   },
   "nodemonConfig": {
     "watch":["../client/src/shared/","./"]

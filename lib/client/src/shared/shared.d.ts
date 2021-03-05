@@ -1,5 +1,5 @@
-declare interface ICounter {
+export declare interface ICounter {
     count: number;
 }
 export declare const counter: ICounter;
-export {};
+export declare function incrementCounter(counter: ICounter): void;
