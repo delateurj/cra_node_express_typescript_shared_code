@@ -10,7 +10,6 @@ var usersRouter = require("./routes/users");
 var app = express();
 
 import { counter, incrementCounter } from "../client/src/shared/shared";
-import { increment } from "./increment";
 setInterval(() => {
   incrementCounter(counter);
 }, 1000);
